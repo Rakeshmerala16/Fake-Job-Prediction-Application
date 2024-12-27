@@ -1,111 +1,95 @@
-Fake Job Prediction Application
+******Fake Job Prediction Application******
 
-Overview
+****Overview****
 
-This project implements a machine learning model to predict whether a job posting is fake or real based on patterns and features extracted from the data. The model leverages text and numerical features to analyze job postings and identify fraudulent listings, providing a robust solution for job-seekers and platforms.
+    This project uses a machine learning model to predict whether a job posting is fake or real based on various input fields. The system combines text analysis and numerical features to provide a reliable decision-making process, benefiting both job-seekers and job platforms.
 
-Features
+****Features****
 
-Data Cleaning: Handles missing values, removes irrelevant data, and preprocesses text fields.
+**Input Fields:**
 
-Feature Extraction:
+**Job Title:** Captures keywords indicative of legitimacy or fraud.
 
-Text features are processed using TF-IDF to capture word importance.
+**Company Profile:** Assesses the level of detail in the company's description.
 
-Numerical features such as telecommuting and has_company_logo are used for context.
+**Job Description:** Evaluates responsibilities and language used.
 
-Hybrid Model: Combines multiple base algorithms (Logistic Regression, Random Forest, Gradient Boosting) with a Stacking Classifier to enhance prediction accuracy.
+**Requirements:** Checks for realistic qualifications.
 
-Evaluation: Model performance is measured using accuracy, precision, recall, and F1-score.
+**Benefits:** Identifies plausible or overly attractive offers.
 
-Prediction Pipeline: Accepts new job postings, processes their features, and predicts their authenticity.
+**Telecommuting:** Indicates whether remote work is available.
 
-Dataset
+**Company Logo:** Considers the presence of a company logo.
 
-The model uses a dataset with labeled job postings containing:
+**Has Screening Questions:** Adds credibility to the listing.
 
-Text Fields: Job title, description, and other textual data.
+**Hybrid Model:**
 
-Numerical Fields: Indicators like telecommuting, presence of a company logo, and screening questions.
+    Combines predictions from Logistic Regression, Random Forest, and Gradient Boosting.
 
-Example Features:
+    Utilizes a Stacking Classifier for enhanced decision-making.
 
-Fake Jobs:
+**Output:**
 
-Keywords: "Earn," "Easy Money," "Work from Home."
+  Predicts whether a job is Fake or Real.
 
-Lack of company details or logos.
+  Provides probabilities for each class.
 
-Unrealistic benefits or vague descriptions.
+****How It Works****
 
-Real Jobs:
+**1. Data Preparation**
 
-Specific job titles and descriptions.
+Cleans the dataset to handle missing values.
 
-Company profiles with logos and screening questions.
+Combines text-based fields into a single feature for analysis.
 
-Reasonable benefits and qualifications.
+**2. Feature Extraction**
 
-How It Works
+Text Features: Converts text into numerical vectors using TF-IDF.
 
-1. Data Preparation
+Numerical Features: Appends binary indicators like telecommuting, logo presence, and screening questions.
 
-Clean the dataset to handle missing values and irrelevant entries.
+**3. Model Training**
 
-Combine text-based fields into a single feature for better context analysis.
+Trains a hybrid model using labeled data to learn patterns of fake and real job postings.
 
-2. Feature Extraction
+**4. Prediction Pipeline**
 
-Text Features: Convert text to numerical vectors using TF-IDF.
+Processes new job postings with the same TF-IDF and numerical feature pipeline.
 
-Numerical Features: Use non-text columns like telecommuting and company logo presence.
+Passes the features through the hybrid model to make predictions.
 
-3. Hybrid Model Construction
+**Example Usage**
 
-Base models:
+**Input:**
 
-Logistic Regression: Captures linear relationships.
-
-Random Forest: Identifies complex patterns using ensembles of decision trees.
-
-Gradient Boosting: Focuses on misclassified samples to improve predictions.
-
-A meta-classifier (Logistic Regression) combines base model predictions for a final decision.
-
-4. Training and Evaluation
-
-Train the model using labeled data to learn patterns.
-
-Test on unseen data to evaluate metrics like accuracy, precision, recall, and F1-score.
-
-5. Prediction Pipeline
-
-Input Processing: Text fields are vectorized using TF-IDF, and numerical features are appended.
-
-Prediction: Base models make predictions, and the meta-classifier aggregates them to provide the final label.
-
-Example Usage
-
-Fake Job Input:
+**Fake Job Input:**
 
 {
-  "title": "Work from Home - Easy Money",
-  "description": "Earn $500 per day with no experience.",
+  "job_title": "Work from Home - Earn Money Fast",
+  "company_profile": "",
+  "job_description": "Earn $1000 per week with no experience required.",
+  "requirements": "",
+  "benefits": "Unlimited earnings, no office hours.",
   "telecommuting": true,
-  "has_company_logo": false,
-  "has_screening_questions": false
+  "company_logo": false,
+  "has_questions": false
 }
 
-Prediction: Fake
+****Prediction: Fake****
 
-Real Job Input:
+**Real Job Input:**
 
 {
-  "title": "Full-Stack Developer",
-  "description": "Develop and maintain applications. 3+ years experience required.",
-  "telecommuting": false,
-  "has_company_logo": true,
-  "has_screening_questions": true
+  "job_title": "Senior Data Scientist",
+  "company_profile": "A reputable data analytics company.",
+  "job_description": "Develop predictive models, work with large datasets.",
+  "requirements": "3+ years of experience in data science, Python, SQL.",
+  "benefits": "Competitive salary, health insurance, remote work.",
+  "telecommuting": true,
+  "company_logo": true,
+  "has_questions": true
 }
 
-Prediction: Real
+****Prediction: Real****
