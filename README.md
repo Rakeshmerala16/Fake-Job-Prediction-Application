@@ -1,8 +1,8 @@
-******Fake Job Prediction Application******
+********Fake Job Prediction Application********
 
 ****Overview****
 
-    This project uses a machine learning model to predict whether a job posting is fake or real based on various input fields. The system combines text analysis and numerical features to provide a reliable decision-making process, benefiting both job-seekers and job platforms.
+This project uses a machine learning model to predict whether a job posting is fake or real based on various input fields. The system combines text analysis and numerical features to provide a reliable decision-making process, benefiting both job-seekers and job platforms.
 
 ****Features****
 
@@ -26,15 +26,14 @@
 
 **Hybrid Model:**
 
-    Combines predictions from Logistic Regression, Random Forest, and Gradient Boosting.
+Combines predictions from Logistic Regression, Random Forest, and Gradient Boosting.
 
-    Utilizes a Stacking Classifier for enhanced decision-making.
+Utilizes a Stacking Classifier for enhanced decision-making.
 
 **Output:**
 
-  Predicts whether a job is Fake or Real.
-
-  Provides probabilities for each class.
+Predicts whether a job is Fake or Real.
+Provides probabilities for each class.
 
 ****How It Works****
 
@@ -68,12 +67,19 @@ Passes the features through the hybrid model to make predictions.
 
 {
   "job_title": "Work from Home - Earn Money Fast",
+  
   "company_profile": "",
+  
   "job_description": "Earn $1000 per week with no experience required.",
+  
   "requirements": "",
+  
   "benefits": "Unlimited earnings, no office hours.",
+  
   "telecommuting": true,
+  
   "company_logo": false,
+  
   "has_questions": false
 }
 
@@ -83,13 +89,54 @@ Passes the features through the hybrid model to make predictions.
 
 {
   "job_title": "Senior Data Scientist",
+  
   "company_profile": "A reputable data analytics company.",
+  
   "job_description": "Develop predictive models, work with large datasets.",
+  
   "requirements": "3+ years of experience in data science, Python, SQL.",
+  
   "benefits": "Competitive salary, health insurance, remote work.",
+  
   "telecommuting": true,
+  
   "company_logo": true,
+  
   "has_questions": true
 }
 
 ****Prediction: Real****
+
+****Technologies Used****
+
+**Python**
+
+**Scikit-learn**
+
+**Pandas**
+
+**NumPy**
+
+****Results****
+
+The model successfully identifies fake and real job postings with high accuracy. Evaluation metrics include:
+
+**Accuracy**
+
+**Precision**
+
+**Recall**
+
+**F1-Score**
+
+****Future Enhancements****
+
+Integrate advanced NLP techniques for better text analysis.
+
+Expand the dataset for improved generalization.
+
+Develop a user-friendly web interface for predictions.
+
+****License****
+
+This project is licensed under the MIT License. See the LICENSE file for details.
