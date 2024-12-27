@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Job Prediction</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Ensure consistent box sizing */
+            background-image: url('https://siccura.com/wp-content/uploads/2021/08/JOB-HIRING-SCAM-1200X628.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center; /* Make the background cover the viewport */
+            background-attachment: scroll; /* Background scrolls with the page */
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit; /* Apply box-sizing to all elements */
+        }
+
+        h1 {
+            text-align: center;
+            color:bla;
+            margin-top: 50px;
+            font-size: 50px;
+        }
+
+        .container {
+        position: relative;
+        max-width: 600px;
+        margin: 30px auto;
+        background-color: rgba(255, 255, 255, 0.8); /* Add semi-transparent white background */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px); /* Optional: add a blur effect */
+        }
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+            font-size: 16px;
+            color: #444;
+        }
+
+        input[type="text"], textarea {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%; /* Ensure input and text areas don't exceed container width */
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 12px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 15px; /* Add space before the button */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            label, input[type="text"], textarea {
+                font-size: 14px;
+            }
+
+            button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body onload="clearForm()">
+    <h1>Fake Job Prediction App</h1>
+    <div class="container">
+        <form id="jobForm" action="/predict" method="POST">
+            <label for="title">Job Title:</label>
+            <input type="text" name="title" id="title" placeholder="Enter job title">
+
+            <label for="company_profile">Company Profile:</label>
+            <textarea name="company_profile" id="company_profile" placeholder="Enter company profile"></textarea>
+
+            <label for="description">Job Description:</label>
+            <textarea name="description" id="description" placeholder="Enter job description"></textarea>
+
+            <label for="requirements">Requirements:</label>
+            <textarea name="requirements" id="requirements" placeholder="Enter job requirements"></textarea>
+
+            <label for="benefits">Benefits:</label>
+            <textarea name="benefits" id="benefits" placeholder="Enter benefits"></textarea>
+
+            <label for="telecommuting">
+                <input type="checkbox" name="telecommuting" value="1">
+                Telecommuting Available
+            </label>
+
+            <label for="has_company_logo">
+                <input type="checkbox" name="has_company_logo" value="1">
+                Company Logo Available
+            </label>
+
+            <label for="has_questions">
+                <input type="checkbox" name="has_questions" value="1">
+                Has Questions
+            </label>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+
+    <script>
+        function clearForm() {
+            document.getElementById('jobForm').reset();
+        }
+    </script>
+</body>
+</html>

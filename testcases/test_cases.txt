@@ -1,0 +1,85 @@
+=========================
+FAKE JOB PREDICTION TEST CASES
+=========================
+
+**Test Case 1: Predict a Fake Job Posting**
+- Job Title: "Earn Money Online"
+- Company Profile: "None provided."
+- Description: "Make $500 a day from home! No experience needed."
+- Requirements: "Basic computer skills."
+- Benefits: "Flexible hours, no contract."
+- Telecommuting: Yes
+- Has Company Logo: No
+- Has Screening Questions: No
+- Expected Output: Fake
+- Actual Output: Fake
+
+-------------------------
+
+**Test Case 2: Predict a Real Job Posting**
+- Job Title: "Full-Stack Developer"
+- Company Profile: "Tech Solutions Inc., a leading software company."
+- Description: "Develop and maintain web applications. 3+ years experience required."
+- Requirements: "Proficiency in React, Node.js, and MongoDB."
+- Benefits: "Health insurance, paid leave."
+- Telecommuting: No
+- Has Company Logo: Yes
+- Has Screening Questions: Yes
+- Expected Output: Real
+- Actual Output: Real
+
+-------------------------
+
+**Test Case 3: Predict an Ambiguous Job Posting**
+- Job Title: "Customer Service Representative"
+- Company Profile: "A mid-sized call center."
+- Description: "Handle customer queries and complaints."
+- Requirements: "Good communication skills."
+- Benefits: "Work-life balance."
+- Telecommuting: No
+- Has Company Logo: No
+- Has Screening Questions: No
+- Expected Output: Real/Fake (borderline)
+- Actual Output: (Depends on model)
+
+-------------------------
+
+**Test Case 4: Predict a Fake Job Posting**
+- Job Title: "Work From Home - Easy Money"
+- Company Profile: "Small business startup"
+- Description: "Just sign up and start earning immediately!"
+- Requirements: None
+- Benefits: "Earn $100/hour without experience"
+- Telecommuting: Yes
+- Has Company Logo: No
+- Has Screening Questions: No
+- Expected Output: Fake
+- Actual Output: Fake
+
+-------------------------
+
+**Test Case 5: Predict a Real Job Posting**
+- Job Title: "Marketing Manager"
+- Company Profile: "Global marketing agency with 10 years of experience."
+- Description: "Manage client campaigns and oversee the marketing team."
+- Requirements: "5+ years of experience in marketing."
+- Benefits: "Healthcare, remote work options, bonuses."
+- Telecommuting: Yes
+- Has Company Logo: Yes
+- Has Screening Questions: Yes
+- Expected Output: Real
+- Actual Output: Real
+
+-------------------------
+
+**Test Case 6: Predict an Edge Case**
+- Job Title: "Virtual Assistant"
+- Company Profile: "Startup looking to grow fast."
+- Description: "Organize files, schedule meetings, handle emails."
+- Requirements: "Experience preferred but not required."
+- Benefits: "Flexible schedule."
+- Telecommuting: Yes
+- Has Company Logo: No
+- Has Screening Questions: No
+- Expected Output: Fake/Real (borderline)
+- Actual Output: (Depends on model)
